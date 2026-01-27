@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Photography & Videography</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --bg:#fff;
+  --text:#222;
+  --section:#f8f8f8;
+  --card:#fff;
+  --primary:#222;
+  --hover:#555;
+  --shadow:rgba(0,0,0,.15);
+}
+[data-theme="dark"]{
+  --bg:#0e0e0e;
+  --text:#f0f0f0;
+  --section:#1a1a1a;
+  --card:#222;
+  --primary:#fff;
+  --hover:#ddd;
+  --shadow:rgba(255,255,255,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:var(--bg);color:var(--text);scroll-behavior:smooth;padding-bottom:150px}
+
+/* HEADER */
+header{
+  min-height:100vh;
+  background:url("./profile.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+}
+header .content{
+  position:relative;
+  color:#fff;
+  text-align:center;
+  animation:fade 1.5s forwards;
+}
+.profile-pic{
+  width:130px;height:130px;
+  border-radius:50%;object-fit:cover;
+  border:4px solid #ddd;margin-bottom:15px;
+}
+.contact-btn{
+  background:#fff;color:#000;
+  padding:14px 35px;border-radius:50px;
+  font-weight:600;text-decoration:none;
+}
+
+/* TITLES */
+.section-title{
+  font-size:2.5rem;
+  margin:60px 0 30px;
+  font-weight:700;
+  opacity:0;
+  transform:translateY(40px);
+  text-align:center;
+}
+
+/* SERVICES */
+.services{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:0 5%;
+}
+.service-card{
+  width:250px;
+  background:var(--card);
+  padding:30px;
+  border-radius:15px;
+  border:1px solid #ccc;
+  transition:.3s;
+  text-align:center;
+  cursor:pointer;
+  color:inherit;
+  text-decoration:none;
+}
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 10px 25px var(--shadow);
+}
+.service-card i{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+/* PACKAGES */
+.packages{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:0 5%;
+  max-width:1200px;
+  margin:auto;
+}
+.package-card{
+  background:var(--card);
+  padding:30px;
+  border-radius:15px;
+  border:1px solid #ccc;
+  text-align:center;
+  box-shadow:0 10px 25px var(--shadow);
+  transition:.3s;
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
+}
+.package-card:hover{transform:translateY(-10px)}
+.package-card i{font-size:50px;margin-bottom:15px}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  max-width:1200px;
+  margin:auto;
+  padding:0 5%;
+}
+.gallery-item{
+  overflow:hidden;
+  border-radius:12px;
+}
+.gallery-item img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .6s ease, transform .6s ease;
+  will-change:transform;
+  backface-visibility:hidden;
+}
+.gallery-item:hover img{
+  transform:scale(1.08);
+  box-shadow:0 15px 35px var(--shadow);
+}
+
+/* CAMERAS */
+.cameras{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+  padding:0 5%;
+}
+.camera-item{
+  background:var(--card);
+  padding:15px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 25px var(--shadow);
+}
+.camera-item img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+/* BOOKING */
+.booking-container{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+  background:var(--card);
+  border-radius:15px;
+  box-shadow:0 10px 25px var(--shadow);
+}
+.booking-container input,
+.booking-container select,
+.booking-container textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+.booking-container button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:50px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* LOCATION */
+.location-container iframe{
+  width:100%;
+  height:450px;
+  border-radius:15px;
+  border:1px solid #ccc;
+  box-shadow:0 10px 25px var(--shadow);
+}
+
+/* WHATSAPP FLOAT */
+.floating-whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  color:#fff;
+  cursor:pointer;
+  z-index:999;
+}
+
+/* FLOATING SOCIALS */
+.floating-socials{
+  position:fixed;
+  bottom:100px;
+  right:25px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:999;
+}
+.float-icon{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+  color:#fff;
+  text-decoration:none;
+  transition:transform .3s ease;
+}
+.float-icon.instagram{ background:#E1306C; }
+.float-icon.facebook{ background:#1877F2; }
+.float-icon.snapchat{ background:#FFFC00; color:#000; }
+.float-icon.tiktok{ background:#000; }
+.float-icon:hover{ transform:scale(1.2); }
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  background:var(--section);
+}
+footer .social-icon{
+  display:inline-block;
+  margin:10px 10px 0 0;
+  font-size:28px;
+  text-decoration:none;
+  transition:transform .3s ease, color .3s ease;
+}
+footer .social-icon.instagram{ color:#E1306C; }
+footer .social-icon.instagram:hover{ color:#C13584; transform:scale(1.2); }
+footer .social-icon.facebook{ color:#1877F2; }
+footer .social-icon.facebook:hover{ color:#145DBF; transform:scale(1.2); }
+footer .social-icon.snapchat{ color:#FFFC00; }
+footer .social-icon.snapchat:hover{ color:#FFD500; transform:scale(1.2); }
+footer .social-icon.tiktok{ color:#000; }
+footer .social-icon.tiktok:hover{ color:#333; transform:scale(1.2); }
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.lightbox img{max-width:90%;max-height:80%;}
+
+/* ANIMATION */
+@keyframes fade{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  header{height:70vh;}
+  .profile-pic{width:100px;height:100px;}
+  .section-title{font-size:2rem;}
+  .services, .packages, .cameras, .gallery{
+    gap:15px;
+    padding:0 2%;
+  }
+}
+
+/* THEME TOGGLE BUTTON */
+#theme-toggle{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:999;
+  padding:10px 20px;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  background:#222;
+  color:#fff;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="content">
+    <img src="./profile1.jpg" class="profile-pic">
+    <h1>Professional Photography & Videography</h1>
+    <p>Weddings • Birthdays • Events</p>
+    <a href="tel:03298162144" class="contact-btn">Call Now</a>
+  </div>
+</header>
+
+<section>
+  <div class="section-title">Our Services</div>
+  <div class="services">
+    <a href="photography.html" class="service-card"><i class="fa-solid fa-ring"></i><h3>Wedding</h3></a>
+    <a href="birthdays.html" class="service-card"><i class="fa-solid fa-cake-candles"></i><h3>Birthday</h3></a>
+    <a href="parties.html" class="service-card"><i class="fa-solid fa-martini-glass"></i><h3>Party</h3></a>
+    <a href="corporate.html" class="service-card"><i class="fa-solid fa-briefcase"></i><h3>Corporate</h3></a>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Our Packages</div>
+  <div class="packages">
+    <a href="package-basic.html" class="package-card"><h3>Basic</h3><p>PKR 20,000</p></a>
+    <a href="package-standard.html" class="package-card"><h3>Standard</h3><p>PKR 60,000</p></a>
+    <a href="package-premium.html" class="package-card"><h3>Premium</h3><p>PKR 70,000</p></a>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Our Gallery</div>
+  <div class="gallery">
+    <div class="gallery-item"><img src="./gallery1.jpg"></div>
+    <div class="gallery-item"><img src="./gallery2.png"></div>
+    <div class="gallery-item"><img src="./gallery3.png"></div>
+    <div class="gallery-item"><img src="./gallery4.png"></div>
+    <div class="gallery-item"><img src="./gallery5.png"></div>
+    <div class="gallery-item"><img src="./gallery6.png"></div>
+    <div class="gallery-item"><img src="./gallery7.png"></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Our Cameras</div>
+  <div class="cameras">
+    <div class="camera-item"><img src="./canon.jpg"><h4>Canon DSLR</h4></div>
+    <div class="camera-item"><img src="./nikon.jpg"><h4>Nikon DSLR</h4></div>
+    <div class="camera-item"><img src="./sony.jpg"><h4>Sony DSLR</h4></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Book Your Session</div>
+  <div class="booking-container">
+    <input id="name" placeholder="Your Name" required>
+    <input id="phone" placeholder="Phone Number" required>
+    <select id="service">
+      <option>Wedding</option>
+      <option>Birthday</option>
+      <option>Party</option>
+      <option>Corporate</option>
+    </select>
+    <textarea id="details" placeholder="Details" required></textarea>
+    <button onclick="sendWhatsApp()">Book via WhatsApp</button>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Our Location</div>
+  <div class="location-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.123456789!2d74.353!3d31.5204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904d5example%3A0x123456abcdef!2sWahdat%20Colony%2C%20Lahore%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <p style="text-align:center;margin-top:10px;color:var(--text);font-weight:600;">📍 Wahdat Colony, Lahore, Pakistan</p>
+  </div>
+</section>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-whatsapp" onclick="sendWhatsApp()">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<div class="floating-socials">
+  <a href="https://www.instagram.com/i_am_rashid_12?igsh=MXhuYmxiNHg4aGd3Yw==" target="_blank" class="float-icon instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@rashid2836?_r=1&_t=ZS-93AKkgmKT83" target="_blank" class="float-icon tiktok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.snapchat.com/add/rashid-khan2836" target="_blank" class="float-icon snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+</div>
+
+<footer>
+  📞 03298162144 | 📍 Lahore, Wahdat Colony  
+  <br>© 2026 Rashid Khan Studio
+  <br>
+  <a href="https://www.instagram.com/i_am_rashid_12?igsh=MXhuYmxiNHg4aGd3Yw==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@rashid2836?_r=1&_t=ZS-93AKkgmKT83" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.snapchat.com/add/rashid-khan2836" target="_blank" class="social-icon snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+</footer>
+
+<div class="lightbox" id="lightbox"><img></div>
+
+<!-- THEME TOGGLE BUTTON -->
+<button id="theme-toggle">Dark Mode</button>
+
+<script>
+// LIGHTBOX
+const imgs=document.querySelectorAll(".gallery-item img");
+const lb=document.getElementById("lightbox");
+const lbImg=lb.querySelector("img");
+imgs.forEach(i=>{
+  i.onload = () => { i.style.opacity=1; i.style.animation="fade 1s forwards"; };
+  i.onclick=()=>{lb.style.display="flex"; lbImg.src=i.src;}
+});
+lb.onclick=()=>lb.style.display="none";
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") lb.style.display="none"; });
+
+// SCROLL ANIMATION
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{ if(x.isIntersecting)x.target.style.animation="fade 1s forwards"; });
+});
+document.querySelectorAll(".section-title,.gallery-item img").forEach(el=>obs.observe(el));
+
+// WHATSAPP
+function sendWhatsApp(){
+  const name=document.getElementById("name")?.value.trim();
+  const phone=document.getElementById("phone")?.value.trim();
+  const service=document.getElementById("service")?.value||"General";
+  const details=document.getElementById("details")?.value.trim()||"";
+  
+  if(!name || !phone){ alert("Please enter your name and phone number!"); return; }
+
+  const msg=`Booking Request:\nName: ${name}\nPhone: ${phone}\nService: ${service}\nDetails: ${details}`;
+  window.open("https://wa.me/923156429598?text="+encodeURIComponent(msg));
+}
+
+// THEME TOGGLE
+const toggleBtn = document.getElementById("theme-toggle");
+toggleBtn.addEventListener("click", () => {
+  const html = document.documentElement;
+  if(html.getAttribute("data-theme") === "dark"){
+    html.removeAttribute("data-theme");
+    toggleBtn.textContent = "Dark Mode";
+    toggleBtn.style.background="#222";
+    toggleBtn.style.color="#fff";
+  } else {
+    html.setAttribute("data-theme", "dark");
+    toggleBtn.textContent = "Light Mode";
+    toggleBtn.style.background="#fff";
+    toggleBtn.style.color="#222";
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Photography | R.K Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+--dark:#0f0f0f;
+--light:#ffffff;
+--gray:#f6f6f6;
+--gold:#cfa24a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:var(--light);color:#222}
+
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(6px);
+z-index:999;
+}
+.navbar .logo{
+color:#fff;
+font-weight:700;
+font-size:1.2rem;
+letter-spacing:1px;
+}
+.navbar a{
+color:#fff;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+.navbar a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{
+height:80vh;
+background:url("./profile.jpg") center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+padding-top:80px;
+}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.65);
+}
+.hero-content{
+position:relative;
+color:#fff;
+text-align:center;
+}
+
+/* PROFILE WITH GLOW */
+.hero-profile{
+width:145px;
+height:145px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid var(--gold);
+margin-bottom:18px;
+animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 15px rgba(207,162,74,.5);
+}
+to{
+box-shadow:0 0 35px rgba(207,162,74,1);
+}
+}
+
+.hero-content h1{
+font-size:3.5rem;
+letter-spacing:2px;
+}
+.hero-content p{
+font-size:1.2rem;
+margin-top:10px;
+opacity:.9;
+}
+
+/* SECTION */
+section{
+padding:90px 6%;
+}
+.section-title{
+text-align:center;
+font-size:2.6rem;
+margin-bottom:15px;
+}
+.section-sub{
+text-align:center;
+max-width:850px;
+margin:0 auto 60px;
+font-size:1.1rem;
+line-height:1.9;
+color:#555;
+}
+
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+max-width:1150px;
+margin:auto;
+}
+.feature{
+background:var(--gray);
+padding:35px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+.feature:hover{
+transform:translateY(-10px);
+box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+.feature i{
+font-size:42px;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+.gallery img{
+width:100%;
+border-radius:18px;
+transition:.4s;
+cursor:pointer;
+}
+.gallery img:hover{
+transform:scale(1.06);
+box-shadow:0 18px 40px rgba(0,0,0,.3);
+}
+
+/* CTA */
+.cta{
+background:var(--dark);
+color:#fff;
+text-align:center;
+padding:90px 5%;
+margin-top:80px;
+}
+.cta h2{
+font-size:2.5rem;
+margin-bottom:15px;
+}
+.cta p{
+opacity:.85;
+margin-bottom:25px;
+}
+.cta a{
+display:inline-block;
+padding:16px 48px;
+background:var(--gold);
+color:#000;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+.cta a:hover{
+transform:scale(1.06);
+}
+
+/* FOOTER */
+footer{
+background:#000;
+color:#aaa;
+text-align:center;
+padding:40px;
+font-size:.95rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">R.K STUDIO</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="wedding.html">Wedding</a>
+    <a href="#gallery">Gallery</a>
+    <a href="https://wa.me/923156429598">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <img src="./profile1.jpg"
+         class="hero-profile"
+         alt="R.K Studio Profile">
+
+    <h1>Wedding Photography</h1>
+    <p>Luxury • Cinematic • Timeless Memories</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+<h2 class="section-title">Your Love Story, Perfectly Captured</h2>
+<p class="section-sub">
+R.K Studio آپ کے <b>Nikah, Barat اور Walima</b> کو  
+premium cinematic انداز میں capture کرتا ہے  
+تاکہ آپ کی wedding ہمیشہ یادگار رہے ❤️
+</p>
+
+<div class="features">
+<div class="feature">
+<i class="fa-solid fa-camera-retro"></i>
+<h3>High-End Photography</h3>
+<p>Professionally edited photos</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-video"></i>
+<h3>Cinematic Film</h3>
+<p>Movie style wedding videos</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-book-open"></i>
+<h3>Premium Albums</h3>
+<p>Luxury wedding albums</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-clock"></i>
+<h3>Full Day Coverage</h3>
+<p>No moment missed</p>
+</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2 class="section-title">Wedding Moments</h2>
+<p class="section-sub">Some of our recent wedding captures</p>
+
+<div class="gallery">
+<img src="https://images.pexels.com/photos/3014853/pexels-photo-3014853.jpeg">
+<img src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg">
+<img src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg">
+<img src="https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg">
+</div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Ready to Book Your Wedding?</h2>
+<p>Let us turn your big day into timeless memories</p>
+<a href="https://wa.me/923156429598?text=I want to book Wedding Photography">
+Book Wedding Session
+</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+📞 03156429598 &nbsp; | &nbsp; 📍 Lahore, Wahdat Colony Bukhari Market Naqsha Stop  
+<br>© 2026 R.K Studio — All Rights Reserved
+</footer>
+
+</body>
+</html>
