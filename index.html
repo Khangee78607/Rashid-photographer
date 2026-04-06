@@ -351,12 +351,60 @@ footer .social-icon.tiktok:hover{ color:#333; transform:scale(1.2); }
 </section>
 
 <section>
-  <div class="section-title">Our Packages</div>
+  <div class="section-title">📦 Packages</div>
   <div class="packages">
-    <a href="package-basic.html" class="package-card"><h3>Basic</h3><p>Contact</p></a>
-    <a href="package-standard.html" class="package-card"><h3>Standard</h3><p>Contact</p></a>
-    <a href="package-premium.html" class="package-card"><h3>Premium</h3><p>Contact</p></a>
+    <div class="package-card">
+      <h3>🎬 Package 1</h3>
+      <p>3 Day Movie + Photography (1 Album – 100 pictures Each Album)</p>
+      <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+        <li>📷 DSLR Sony Camera Coverage</li>
+        <li>🎥 Full HD Cinematic Movie</li>
+        <li>👨‍👩‍👧 Family Album (100 Pics)</li>
+        <li>✨ Professional Editing & Premium Printing</li>
+      </ul>
+      <p>💰 Price: Rs. 35,000</p>
+    </div>
+
+    <div class="package-card">
+      <h3>🎬 Package 2</h3>
+      <p>3 Day Movie + Photography (2 Albums – 100 pictures Each Album) + 3 Day Drone</p>
+      <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+        <li>📷 DSLR Sony Camera Coverage</li>
+        <li>🎥 Full HD Cinematic Movie</li>
+        <li>👨‍👩‍👧 Family & 💑 Couple Albums</li>
+        <li>🚁 3 Days Drone Shooting</li>
+        <li>✨ Professional Editing & Premium Printing</li>
+      </ul>
+      <p>💰 Price: Rs. 80,000</p>
+    </div>
+
+    <div class="package-card">
+      <h3>🎬 Package 3</h3>
+      <p>3 Day Movie + Photography (3 Albums – 100 pictures Each Album) + 1 Day Drone</p>
+      <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+        <li>📷 DSLR Sony Camera Coverage</li>
+        <li>🎥 Full HD Cinematic Movie</li>
+        <li>👨‍👩‍👧 Family & 💑 Couple Albums & 📔 Extra Album</li>
+        <li>🚁 1 Day Drone Shooting</li>
+        <li>✨ Professional Editing & Premium Printing</li>
+      </ul>
+      <p>💰 Price: Rs. 70,000</p>
+    </div>
+
+    <div class="package-card">
+      <h3>🎬 Package 4</h3>
+      <p>3 Day Movie + Photography (3 Albums – 100 pictures Each Album) + 1 Day Drone</p>
+      <ul style="text-align:left; margin-top:10px; padding-left:20px;">
+        <li>📷 DSLR Sony Camera Coverage</li>
+        <li>🎥 Full HD Cinematic Movie</li>
+        <li>👨‍👩‍👧 Family, 💑 Couple & 📔 Extra Album</li>
+        <li>🚁 1 Day Drone Shooting</li>
+        <li>✨ Professional Editing & Premium Printing</li>
+      </ul>
+      <p>💰 Price: Rs. 80,000</p>
+    </div>
   </div>
+  <p style="text-align:center; margin-top:15px; font-weight:600;">⚠ <em>Note: Out-of-city travel: 💵 Rs. 10,000/day extra</em></p>
 </section>
 
 <section>
@@ -424,62 +472,33 @@ footer .social-icon.tiktok:hover{ color:#333; transform:scale(1.2); }
   <br>© 2026 Rashid Khan Studio
   <br>
   <a href="https://www.instagram.com/i_am_rashid_12?igsh=MXhuYmxiNHg4aGd3Yw==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.tiktok.com/@rashid2836?_r=1&_t=ZS-93AKkgmKT83" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.facebook.com/rashid.khan" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
   <a href="https://www.snapchat.com/add/rashid-khan2836" target="_blank" class="social-icon snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+  <a href="https://www.tiktok.com/@rashid2836?_r=1&_t=ZS-93AKkgmKT83" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
 </footer>
 
-<div class="lightbox" id="lightbox"><img></div>
-
-<!-- THEME TOGGLE BUTTON -->
-<button id="theme-toggle">Dark Mode</button>
-
 <script>
-// LIGHTBOX
-const imgs=document.querySelectorAll(".gallery-item img");
-const lb=document.getElementById("lightbox");
-const lbImg=lb.querySelector("img");
-imgs.forEach(i=>{
-  i.onload = () => { i.style.opacity=1; i.style.animation="fade 1s forwards"; };
-  i.onclick=()=>{lb.style.display="flex"; lbImg.src=i.src;}
-});
-lb.onclick=()=>lb.style.display="none";
-document.addEventListener("keydown", e=>{ if(e.key==="Escape") lb.style.display="none"; });
-
-// SCROLL ANIMATION
-const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>{ if(x.isIntersecting)x.target.style.animation="fade 1s forwards"; });
-});
-document.querySelectorAll(".section-title,.gallery-item img").forEach(el=>obs.observe(el));
-
-// WHATSAPP
 function sendWhatsApp(){
-  const name=document.getElementById("name")?.value.trim();
-  const phone=document.getElementById("phone")?.value.trim();
-  const service=document.getElementById("service")?.value||"General";
-  const details=document.getElementById("details")?.value.trim()||"";
-  
-  if(!name || !phone){ alert("Please enter your name and phone number!"); return; }
-
-  const msg=`Booking Request:\nName: ${name}\nPhone: ${phone}\nService: ${service}\nDetails: ${details}`;
-  window.open("https://wa.me/923156429598?text="+encodeURIComponent(msg));
+  let name = document.getElementById('name').value;
+  let phone = document.getElementById('phone').value;
+  let service = document.getElementById('service').value;
+  let details = document.getElementById('details').value;
+  let text = `Name: ${name}%0APhone: ${phone}%0AService: ${service}%0ADetails: ${details}`;
+  window.open(`https://wa.me/923298162144?text=${text}`, '_blank');
 }
 
-// THEME TOGGLE
-const toggleBtn = document.getElementById("theme-toggle");
-toggleBtn.addEventListener("click", () => {
-  const html = document.documentElement;
-  if(html.getAttribute("data-theme") === "dark"){
-    html.removeAttribute("data-theme");
-    toggleBtn.textContent = "Dark Mode";
-    toggleBtn.style.background="#222";
-    toggleBtn.style.color="#fff";
-  } else {
-    html.setAttribute("data-theme", "dark");
-    toggleBtn.textContent = "Light Mode";
-    toggleBtn.style.background="#fff";
-    toggleBtn.style.color="#222";
-  }
-});
+/* GALLERY ANIMATION */
+const galleryImages = document.querySelectorAll('.gallery-item img');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.3});
+galleryImages.forEach(img=>observer.observe(img));
 </script>
 
 </body>
